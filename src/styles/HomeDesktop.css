@@ -1,0 +1,755 @@
+.Home.Desktop {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*background-color: rgb(20, 77, 128);*/
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/********/
+
+.Home.Desktop .Background {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.Home.Desktop .Background img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+/********/
+
+.Home.Desktop .CWRow {
+  width: 100%;
+  height: 70px;
+  min-height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.Home.Desktop .CWRow .ConnectWallet {
+  width: auto;
+  height: 50px;
+  min-height: 50px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: rgb(83, 83, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Home.Desktop .CWRow .ConnectWallet:hover {
+  background-color: #00ea93;
+}
+
+.Home.Desktop .CWRow .ConnectWallet.NoMint {
+  background-color: #aaaaaa;
+  pointer-events: none;
+}
+
+/********/
+
+.Home.Desktop .MainContent {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Home.Desktop .MainContent .TitleRow {
+  width: 100%;
+  height: 10.5vh;
+  min-height: 10.5vh;
+  /*margin-top: 5vh;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .TitleRow img {
+  width: auto;
+  height: 100%;
+  min-height: 100%;
+  object-fit: contain;
+}
+
+.Home.Desktop .MainContent .MintBox {
+  width: min(500px, 96vw);
+  height: max-content;
+  min-height: max-content;
+  margin: 10vh calc(0.5 * (100vw - min(500px, 96vw))) 0;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(24, 20, 50, 0.7);
+  backdrop-filter: blur(25px);
+  box-shadow: rgb(0 0 0 / 25%) 0 4px 4px;
+  border-radius: 10px;
+}
+
+.Home.Desktop .MainContent .MintBox .PFPRow {
+  width: 100%;
+  height: 15vh;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintBox .PFPRow img {
+  width: auto;
+  height: calc(100% - 8px);
+  min-height: calc(100% - 8px);
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid #333267;
+}
+
+.Home.Desktop .MainContent .MintBox .MaxMintText {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #f4f4f4;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.Home.Desktop .MainContent .MintBox .SocialIcons {
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintBox .SocialIcons .SocButton {
+  width: 40px;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 3%;
+}
+
+.Home.Desktop .MainContent .MintBox .SocialIcons .SocButton a {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+.Home.Desktop .MainContent .MintBox .SocialIcons .SocButton a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Home.Desktop .MainContent .MintBox .SocialIcons .SocButton a svg:hover path {
+  /*fill: #5353FF;*/
+  fill: rgb(83, 83, 255);
+  /*fill: #4042FB;*/
+}
+
+.Home.Desktop .MainContent .MintBox .QuantityControls {
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintBox .QuantityControls.NoMint {
+  height: 0;
+  min-height: 0;
+  margin-top: 2vh;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Home.Desktop .MainContent .MintBox .QuantityControls .QCButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /*color: black;*/
+  background-color: #f4f4f4;
+  /*font-family: "Open Sans", sans-serif;*/
+  /*font-weight: bold;*/
+  /*font-size: 50px;*/
+  cursor: pointer;
+}
+
+.Home.Desktop .MainContent .MintBox .QuantityControls .QCButton:nth-child(1) {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.Home.Desktop
+  .MainContent
+  .MintBox
+  .QuantityControls
+  .QCButton:nth-last-child(1) {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.Home.Desktop .MainContent .MintBox .QuantityControls .QCButton:active {
+  background-color: #cccccc;
+}
+
+.Home.Desktop .MainContent .MintBox .QuantityControls .QCButton img {
+  width: 70%;
+  height: 70%;
+  min-height: 70%;
+  margin: 15%;
+  object-fit: contain;
+}
+
+.Home.Desktop .MainContent .MintBox .QuantityControls .QCValue {
+  width: 80px;
+  height: 40px;
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #f4f4f4;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.Home.Desktop .MainContent .MintBox .MBRow {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintBox .MBRow.NoMint {
+  margin-top: 0;
+}
+
+.Home.Desktop .MainContent .MintBox .MBRow .MintButton {
+  width: 80%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #f4f4f4;
+  background-color: rgb(83, 83, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Home.Desktop .MainContent .MintBox .MBRow .MintButton:hover {
+  /*background-color: rgb(215, 240, 211);*/
+  background-color: #4042fb;
+  /*color: rgb(24, 20, 50);*/
+}
+
+.Home.Desktop .MainContent .MintBox .TSRow {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintBox .TSRow .TotalSupply {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #f4f4f4;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/********/
+
+.Home.Desktop .MoreRow {
+  width: 100%;
+  height: 70px;
+  min-height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  top: calc(100vh - 70px);
+  left: 0;
+}
+
+.Home.Desktop .MoreRow .MoreButton {
+  width: 50px;
+  height: 50px;
+  min-height: 50px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  animation: MoreInfoOpacity 2s infinite linear;
+}
+
+.Home.Desktop .MoreRow .MoreButton:hover {
+  animation: none;
+  opacity: 1;
+}
+
+.Home.Desktop .MoreRow .MoreButton img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: contain;
+}
+
+/********/
+
+.Home.Desktop .MainContent .MintInfo {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  position: absolute;
+  /*top: 99vh;*/
+  top: 100vh;
+  left: 0;
+  background: -webkit-linear-gradient(90deg, #171754 0%, #144d80 100%);
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow {
+  width: min(1000px, 90%);
+  height: max-content;
+  min-height: max-content;
+  margin: 20vh calc(0.5 * (100vw - min(1000px, 90%))) 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow .MIGIFContainer {
+  width: 38%;
+  height: calc(0.38 * min(1000px, 90vw));
+  min-height: calc(0.38 * min(1000px, 90vw));
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow .MIGIFContainer .SoonGIF {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow .MIGIFContainer .SoonGIF.Show {
+  opacity: 1;
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow .MIGIFContainer .SoonGIF.Hide {
+  opacity: 0;
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow .MIMainText {
+  width: calc(58%);
+  height: calc(0.38 * min(1000px, 90vw));
+  min-height: calc(0.38 * min(1000px, 90vw));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow .MIMainText .MIMTHeading {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  font-family: Gazpacho, serif;
+  font-weight: 900;
+  font-size: min(5vw, 50px);
+  color: rgb(215, 240, 211);
+}
+
+.Home.Desktop .MainContent .MintInfo .MITopRow .MIMainText .MIMTBody {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  margin-top: min(3vw, 30px);
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: min(1.8vw, 18px);
+  line-height: min(2.8vw, 28px);
+  color: white;
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection {
+  width: min(1000px, 90%);
+  height: max-content;
+  min-height: max-content;
+  margin: 20vh calc(0.5 * (100vw - min(1000px, 90%))) 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection .MISText {
+  width: 58%;
+  height: calc(0.4 * min(1000px, 90vw));
+  min-height: calc(0.4 * min(1000px, 90vw));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection .MISText .MISTHeading {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  font-family: Gazpacho, serif;
+  font-weight: 900;
+  font-size: min(5vw, 50px);
+  color: rgb(239, 182, 21);
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection .MISText .MISTBody {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  margin-top: min(3vw, 30px);
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: min(1.8vw, 18px);
+  line-height: min(2.8vw, 28px);
+  color: white;
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection .MISImage {
+  width: 38%;
+  height: calc(0.38 * min(1000px, 90vw));
+  min-height: calc(0.38 * min(1000px, 90vw));
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection .MISImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection .MISImage img.Show {
+  opacity: 1;
+}
+
+.Home.Desktop .MainContent .MintInfo .MISection .MISImage img.Hide {
+  opacity: 0;
+}
+
+/********/
+
+.Home.Desktop .MainContent .MintInfo .UpNext {
+  width: min(1000px, 90%);
+  height: max-content;
+  min-height: max-content;
+  margin: 20vh calc(0.5 * (100vw - min(1000px, 90%))) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Home.Desktop .MainContent .MintInfo .UpNext .UNImageRow {
+  width: 100%;
+  height: 30vh;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintInfo .UpNext .UNImageRow img {
+  width: auto;
+  height: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  /*border-radius: 20px;*/
+  /*background-color: rgba(24, 20, 50, 0.7);*/
+  /*backdrop-filter: blur(25px);*/
+  /*box-shadow: rgb(0 0 0 / 25%) 0 4px 4px;*/
+}
+
+.Home.Desktop .MainContent .MintInfo .UpNext .UNLiteral {
+  width: 80%;
+  height: max-content;
+  min-height: max-content;
+  margin: 30px 10% 0 10%;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: rgb(108, 132, 95);
+  font-size: min(1.8vw, 18px);
+  line-height: min(2.8vw, 28px);
+}
+
+.Home.Desktop .MainContent .MintInfo .UpNext .UNTopic {
+  width: 80%;
+  height: max-content;
+  min-height: max-content;
+  margin: 0 10%;
+  text-align: left;
+  font-family: Gazpacho, serif;
+  font-weight: 900;
+  color: rgb(215, 240, 211);
+  font-size: min(5vw, 50px);
+}
+
+.Home.Desktop .MainContent .MintInfo .UpNext .UNBody {
+  width: 80%;
+  height: max-content;
+  min-height: max-content;
+  margin: 20px 10% 0 10%;
+  text-align: left;
+  font-family: sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: min(1.8vw, 18px);
+  line-height: min(2.8vw, 28px);
+}
+
+/********/
+
+.Home.Desktop .MainContent .MintInfo .BuiltBy {
+  width: min(1000px, 90%);
+  height: max-content;
+  min-height: max-content;
+  margin: 20vh calc(0.5 * (100vw - min(1000px, 90%)));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Home.Desktop .MainContent .MintInfo .BuiltBy .BBHeading {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: min(1.9vw, 19px);
+  text-align: center;
+}
+
+.Home.Desktop .MainContent .MintInfo .BuiltBy .BBTeam {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Home.Desktop .MainContent .MintInfo .BuiltBy .BBTeam .BBTeamMember {
+  width: 23%;
+  height: max-content;
+  min-height: max-content;
+}
+
+.Home.Desktop .MainContent .MintInfo .BuiltBy .BBTeam .BBTeamMember a {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.Home.Desktop
+  .MainContent
+  .MintInfo
+  .BuiltBy
+  .BBTeam
+  .BBTeamMember
+  a
+  .BBTMImage {
+  width: 100%;
+  height: min(10vw, 100px);
+  min-height: min(10vw, 100px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop
+  .MainContent
+  .MintInfo
+  .BuiltBy
+  .BBTeam
+  .BBTeamMember
+  a
+  .BBTMImage
+  img {
+  width: auto;
+  height: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.Home.Desktop
+  .MainContent
+  .MintInfo
+  .BuiltBy
+  .BBTeam
+  .BBTeamMember
+  a
+  .BBTMName {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  margin-top: 2vw;
+  font-family: Gazpacho, serif;
+  font-weight: bold;
+  /*color: rgb(215, 240, 211);*/
+  color: rgb(239, 182, 21);
+  font-size: min(2.8vw, 28px);
+  text-align: center;
+}
+
+.Home.Desktop
+  .MainContent
+  .MintInfo
+  .BuiltBy
+  .BBTeam
+  .BBTeamMember
+  a
+  .BBTMTwitter {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  margin-top: 1vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop
+  .MainContent
+  .MintInfo
+  .BuiltBy
+  .BBTeam
+  .BBTeamMember
+  a
+  .BBTMTitle {
+  width: 100%;
+  height: max-content;
+  min-height: max-content;
+  margin-top: 1vw;
+  font-family: sans-serif;
+  color: rgb(215, 240, 211);
+  /*color: rgb(239, 182, 21);*/
+  font-size: min(1.6vw, 16px);
+  text-align: center;
+}
+
+/********/
+
+.Home.Desktop .MainContent .MintInfo .BottomSoon {
+  width: 100%;
+  height: 17vh;
+  min-height: 17vh;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home.Desktop .MainContent .MintInfo .BottomSoon img {
+  width: auto;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/********/
+
+@keyframes MoreInfoOpacity {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/********/

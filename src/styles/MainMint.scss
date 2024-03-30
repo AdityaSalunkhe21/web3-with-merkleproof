@@ -1,0 +1,57 @@
+@import "mixins";
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+
+
+.mainMint {
+  height: calc(90vh - $navbar_height);
+  @include flex(center, center, 3em);
+  flex-direction: column;
+  line-height: 180%;
+  text-align: center;
+  padding-top: 1px;
+
+  h1 {
+    font-size: min(3vw, 35px);
+  }
+
+  * {
+    max-width: 60ch;
+    text-shadow: 0 2px 2px #000;
+  }
+
+  .inputContainer {
+    margin-bottom: 2em;
+    
+
+    input {
+      padding: 0.3em 0;
+      text-shadow: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+      // line-height: 180%;
+      text-align: center;
+      //font-family:   "VT323"  ;
+    }
+  }
+  
+  .ps {
+    padding-bottom: 3em;
+  }
+
+  button {
+    cursor: pointer;
+    color: #fff;
+    background-color: #817aa1;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 1px #0f0f0f;
+    font-family: inherit;
+    padding: 1.1em;
+    
+    //padding-top: 10em;
+
+    &:hover {
+      background-color: #4e476e;
+    }
+  }
+}

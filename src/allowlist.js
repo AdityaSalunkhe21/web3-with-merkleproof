@@ -24,13 +24,13 @@ const whitelistAddresses = [
     "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
     "0xCDA0f7BB320c3A437aF5a6FC6d12991677ca3454",
     "0xf0E6D33a264b3e80104DbF1d3becB1c200bD04dc",
-    "0x00e61B6B4c6862bBfaA35981f2670408d248Ee33"
+    "0x00e61B6B4c6862bBfaA35981f2670408d248Ee33",
+    "0xAF99F97a682C6Fa73Babf099A75b721063a651a6"
   ];
 
 const leafNodes = whitelistAddresses.map(addr => keccak256(addr));
 const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
 
-const rootHash = merkleTree.getHexRoot();
 
 function getProof(claimingAddress) {
 
@@ -41,9 +41,6 @@ function getProof(claimingAddress) {
   return hexProof;
 }
 
-function getRoot() {
-  return rootHash.toString('hex');
-}
 
 
 export default getProof

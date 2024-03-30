@@ -47,9 +47,10 @@ export default function MainMint({ accounts, setAccounts }) {
             const contract = new ethers.Contract(roboPunksNFTAddress, roboPunksNFT.abi, signer);
             const ethAddress = await signer.getAddress();
             const proof = getProof(ethAddress.toString())
-            if (getverify(ethAddress)) {
-                //alert("✅ User is on the whitelist");
-                try {
+            if (getverify(ethAddress)) 
+            {
+                alert("✅ User is on the whitelist");
+                /*{try {
                     const options = {value: ethers.utils.parseEther((0.0001 * mintAmount).toString())}
                     const response = await contract.whitelistmint(1,proof,options);
                     console.log("Response: ", response);
@@ -59,9 +60,13 @@ export default function MainMint({ accounts, setAccounts }) {
               } else {
                 alert("❌ User is not on the whitelist");
                 
-              }  
+              }}*/  
 
-            
+            }
+            else
+            {
+                alert("❌ User is not on the whitelist");
+            }
         }
     }
 
@@ -71,7 +76,7 @@ export default function MainMint({ accounts, setAccounts }) {
     }
 
     function handleIncrement() {
-        if (mintAmount >= 5) return;
+        if (mintAmount >= 2) return;
         setMintAmount(mintAmount + 1);
     }
 
@@ -84,12 +89,18 @@ export default function MainMint({ accounts, setAccounts }) {
             {
                 isConnected ? (
                     <div>
-                        <p className="ps">
+                        {/*<p className="ps">
                             Yet to Roll out!<br/>
                             If you HODL 0.015Ξ or more in your wallet.<br/>
                             Congratulation! you are eligible for whitelist
                         </p>
-                        <button onClick={getwhitelist}>Get Whitelist!</button>
+                        <button onClick={getwhitelist}>Get Whitelist!</button>*/}
+                        <div className="inputContainer">
+                            <button onClick={handleDecrement}>-</button>
+                            <input type="number" value={mintAmount} readOnly />
+                            <button onClick={handleIncrement}>+</button>
+                        </div>
+                        <button onClick={handleWhitelistMint}>Mint Now!</button>
                     </div>
                 ) : (
                     <p>You must be connected to mint</p>
